@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JSON Tutorial JavaScript</title>
+        <script type="text/javascript">
+            let animal_1 = {
+                name:"Bidu",
+                class:"mammal",
+                species:"dog",
+                gender:"male",
+                birth:2006
+            }
+
+            let animal_2 = {
+                name:"Bisteca",
+                class:"mammal",
+                species:"dog",
+                gender:"female",
+                birth:2014
+            }
+
+            let animal_3 = {
+                name:"Churrasco",
+                class:"mammal",
+                species:"dog",
+                gender:"male",
+                birth:2015
+            }
+
+            let animal_4 = { 
+                name:"Zyg",
+                class:"mammal",
+                species:"cat",
+                gender:"female",
+                birth:2020
+            }
+
+            let pets = {
+                pet1:animal_1,
+                pet2:animal_2,
+                pet3:animal_3,
+                pet4:animal_4
+            }
+
+            let petFur = [
+                "light",
+                "dark",
+                "spotted",
+                "striped",
+                "three-coloured"
+            ]
+
+            let petEyes = [
+                "brown",
+                "green",
+                "blue"
+            ]
+
+            let petComplete = {
+                petOption_1: petFur,
+                petOption_2: petEyes
+            }
+
+            console.log(pets)
+            console.log(pets.pet1.name, "is a", pets.pet1.species + ".")
+            console.log(pets.pet2.name, "was born in", pets.pet2.birth + ".")
+            pets.pet2.birth = 2015
+            console.log(pets.pet2.name, "was born in", pets.pet2.birth + ".")
+            pets.pet3.birth = 2016
+            console.log(pets)
+            // Below you can see the quoted JSON synthax:
+            console.log(petComplete)
+            console.log(pets["pet4"]["name"], "is a", pets["pet4"]["species"] + ".")
+            console.log(pets.pet4.name, "has", petComplete.petOption_2[1], "eyes.")
+            console.log(pets["pet1"]["name"], "is a", pets["pet1"]["species"] + ".")
+            console.log(pets.pet1.name, "has", petComplete.petOption_1[0], "fur.")
+        </script>
+    </head>
+
+    <body>
+        
+    </body>
+</html>

@@ -1,0 +1,30 @@
+[
+    {
+        "name":"Bidu",
+        "class":"mammal",
+        "species":"dog",
+        "gender":"male",
+        "birth":2006
+    },
+    {
+        "name":"Bisteca",
+        "class":"mammal",
+        "species":"dog",
+        "gender":"female",
+        "birth":2014
+    },
+    {
+        "name":"Churrasco",
+        "class":"mammal",
+        "species":"dog",
+        "gender":"male",
+        "birth":2015
+    },
+    { 
+        "name":"Zyg",
+        "class":"mammal",
+        "species":"cat",
+        "gender":"female",
+        "birth":2020
+    }
+]

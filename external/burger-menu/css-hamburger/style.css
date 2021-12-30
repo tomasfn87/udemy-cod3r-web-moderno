@@ -1,0 +1,539 @@
+* { box-sizing: border-box; }
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background-image: url("images/web/bg.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-position-y: -100vh;
+  background-size: auto;
+  background-attachment: scroll;
+  background-color: #fff;
+  max-width: 1920px;
+  width: 100vw;
+  max-height: 1080px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Cabeçalho */
+header {
+  max-width: 1920px;
+  width: 100vw;
+  max-height: 1080px;
+  height: 100vh;
+  background-image: url("images/web/s1 ft1.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: #222;
+  color: #fff;
+}
+.topmenu { position: inline-flex; }
+
+.logo {
+  margin: 20px;
+  position: relative;
+  display: inline-block;
+}
+.logo-mobile { display: none; }
+
+/* [ON BIG SCREENS] */
+/* (A) WRAPPER */
+#hamnav {
+  display: inline-block;
+  justify-content: space-evenly;
+  width: auto;
+  /* Optional */
+  position: top center;
+}
+
+/* #hamnav nav { display: flex; margin-top: -4vh; } */
+
+/* (B) HORIZONTAL MENU ITEMS */
+#hamitems { display: inline-block; }
+
+#hamitems a {
+  display: inline-flex;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}
+#hamitems a:hover { color: #ff0; }
+
+/* (C) HIDE HAMBURGER */
+#hamnav label, #hamburger { display: none; }
+
+/* [ON SMALL SCREENS] */
+@media screen and (max-width: 600px) {
+  /* (A) BREAK INTO VERTICAL MENU */
+  #hamitems a {
+    display: inline-block;
+    width: 100%;
+    border-top: 1px solid #333;
+  }
+
+  /* (B) SHOW HAMBURGER ICON */
+  #hamnav label {
+    display: inline;
+    color: #fff;
+    font-style: normal;
+    font-size: 3em;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* (C) TOGGLE SHOW/HIDE MENU */
+  #hamitems { display: none; }
+  #hamnav input:checked ~ #hamitems { display: block;}
+  
+  .logo { display: none; }
+  .logo-mobile {
+    display: block;
+    position: relative;
+    margin: -3.5vh auto;
+  }
+}
+
+
+#header-content {
+  display: block;
+  margin-top: 150px;
+  margin-bottom: 20px;
+}
+
+#header-content h1, p {
+  color: #fff;
+  text-align: center;
+}
+
+#header-content h1 {
+  font-size: 5em;
+  font-weight: 900;
+}
+
+#header-content p {
+  font-weight: 300;
+  margin-bottom: 3vh;
+}
+
+strong {
+  color: #ff0;
+  font-weight: 600;
+}
+
+#contato {
+  padding: 20px;
+  background-color:#1cd4e9;
+  font-size: .9em;
+  color: #fff;
+  border-radius: 200px;
+  border: none;
+}
+
+#contato:hover {
+  background-color: #ff0;
+  color: #000;
+}
+
+/* Conteúdo */
+
+#content {
+  height: auto;
+  width: 100vw;
+  margin: 0 auto;
+  color: #fff;
+}
+
+#content h1{
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #000;
+  display: block;
+  /* padding: 2.2vh 0 9vh 0; */
+  margin: 9vh 0 13vh 0;
+}
+
+/* Section id=content */
+
+  /* 1) Sobre */
+#sobre {
+  height: 100vh;
+  overflow: hidden;
+  padding: 0 7vw;
+}
+
+.sobre, .sobre-mobile {
+  min-height: 52vh;
+  height: auto;
+  width: auto;
+  display: block;
+  padding: 30px;
+  background-color: #fff;
+  color: #000;
+  font-weight: 400;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, .3);
+  margin-right: 22vw;
+}
+
+.sobre:hover { box-shadow: 0 5px 14px 0px rgba(0, 0, 0, .6); opacity: 90%; }
+.sobre-mobile { display: none; }
+#sobre p { color: #000; }
+#sobre p:nth-of-type(2) { font-weight: 600; }
+
+  /* 2) Serviços */
+#servicos { padding: 0 7vw; }
+#servicos-itens { display: flex; }
+
+.card-servicos {
+  justify-content: space-between;
+  vertical-align: top;
+  display: block;
+  margin: 1vh auto;
+  max-width: 513px;
+  min-width: 256px;
+  width: 24vw;
+  max-height: 647px;
+  min-height: 323px;
+  height: 440px;
+  padding: 1.4vh .5vw;
+  border-radius: 25px;
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #000;
+  overflow: hidden;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, .3);
+}
+
+.card-servicos:hover { box-shadow: 0 0px 14px 3px rgba(0, 0, 0, .6); opacity: 90%; }
+.card-servicos:nth-of-type(1) { background-image: url("images/web/s3\ ft1.png"); }
+.card-servicos:nth-of-type(2) { background-image: url("images/web/s3\ ft2.png"); }
+.card-servicos:nth-of-type(3) { background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("images/web/s3\ ft3.png"); }
+
+.card-servicos h2 {
+  color: #ff0;
+  font-size: 1.42em;
+  margin-bottom: 3.2vh;
+}
+
+.card-servicos p {
+  margin: 1vh 1vw;
+  padding: 1vh 1.5vw;
+  font-size: 1.07em;
+}
+
+  /* 3) Diferenciais */
+#diferenciais {
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0 7vw;
+}
+
+#diferenciais img {
+  display: block;
+  margin: 5vh auto;
+}
+
+#diferenciais-itens {
+  display: flex;
+  margin: 0 auto;
+}
+
+.card-diferenciais {
+  vertical-align: top;
+  justify-content: space-between;
+  display: block;
+  margin: 1vh auto;
+  min-width: 194px;
+  width: 19vw;
+  min-height: 335px;
+  height: 450px;
+  padding: 20px;
+  border-radius: 42px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, .3);
+  overflow: hidden;
+}
+
+.card-diferenciais:hover { box-shadow: 0 0 14px 3px rgba(0, 0, 0, .6); opacity: 90%; }
+.card-diferenciais:nth-of-type(1) { background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("images/web/s4\ ft1.png"); }
+.card-diferenciais:nth-of-type(2) { background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("images/web/s4\ ft2.png"); }
+.card-diferenciais:nth-of-type(3) { background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("images/web/s4\ ft3.png"); }
+.card-diferenciais span {
+  padding: 1vh 3vw;
+  font-size: 1em;
+}
+
+/* 4) Rodapé */
+footer {
+  padding: 3.5vh 0 4vh 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ff0;
+}
+
+#footer-content {
+  padding: 8vh 7vw;
+  background-color: #222;
+  display: flex;
+  margin: 30px auto;
+  justify-content: space-between;
+  height: auto;
+  overflow: hidden;
+}
+
+
+/* Contato, Endereço e texto */
+#footer-data {
+  width: 400px;
+  height: 490px;
+  color: #fff;
+}
+
+/* 1) Logotipo Rocky, Facebook e Linkedin */
+#footer-data-1 {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 30px 0;
+}
+#footer-data-1 span:nth-of-type(1,2,3) { display: inline-block; }
+
+/* 2) E-mail e telefone */
+#footer-data-2 {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 30px 0;
+}
+#footer-data-2 span:nth-of-type(1, 2, 3, 4, 5) { display: inline-block; }
+#footer-contato:nth-of-type(1) { font-weight: 100; }
+#footer-contato:nth-of-type(2) { font-weight: 300; }
+
+.footer-endereco {
+  display: inline;
+  font-size: .7em;
+  font-weight: 300;
+}
+.footer-endereco:nth-of-type(2) { padding-left: 25px; }
+.footer-endereco-icon { padding-top: 15px; }
+
+/* 3) Texto abaixo das informações de contato */
+#footer-data-text, #footer-data-text-mobile { margin: 10px 0; }
+#footer-data-text p, #footer-data-text-mobile p {
+  font-size: .92em;
+  padding: 2vh 0;
+  margin: 0px;
+  overflow: hidden;
+}
+#blue-text { color: #1cd4e9; font-weight: 600; }
+#footer-data-text-mobile { display: none; }
+
+/* Formulário */
+#footer-form {
+  vertical-align: top;
+  min-width: 400px;
+  width: 30vw;
+  min-height: 490px;
+  height: ;
+  background-color: gray;
+  padding: 0 20px;
+  box-sizing: content-box;
+}
+
+#footer-form form {
+  color: #999;
+  font-size: 1.2em;
+}
+
+#footer-form input {
+  width: 100%;
+  height: 1.4em;
+  font-size: 1.1em;
+  color: #ccc;
+  margin: 2vh auto 1vh auto;
+  padding: 25px;
+}
+
+#footer-form textarea {
+  width: 100%;
+  height: 15vh;
+  margin: 1.5vh auto 1vh auto;
+  font-size: 1.1em;
+  font-family: inherit;
+  color: #ccc;
+  padding: 20px 25px;
+}
+
+#footer-form button {
+  padding: 10px 0;
+  background-color: #1cd4e9;
+  padding: 15px 0;
+  width: 100%;
+  font-size: .9em;
+  font-weight: 600;
+  color: #fff;
+  margin: 1.5vh auto 1.5vh auto;
+}
+
+#footer-form button:hover { 
+  background-color: #ff0;
+  color: #000;
+}
+
+#footer-data, #footer-form {
+  display: inline-block;
+  margin: 0 30px;
+}
+
+
+/* Ajustes para versão mobile */
+@media screen and (max-width: 600px) {
+  body { background-image: none; }
+  
+  /* Cabeçalho */
+  header {
+    height: 100vh;
+    background-image: url("images/mobile/s1\ mobile.png");
+    background-size: cover;
+  }
+  
+  #header-content {
+    padding: auto;
+  }
+  
+  #header-content h1 {
+    font-size: 10vw;
+  }
+  #header-content p {
+    font-size: 2.4vw;
+  }
+
+  /* Conteúdo */
+  #content {
+    margin: 0 auto;
+  }
+
+  #content h1 {
+    margin: 9vh 0 5vh 5vw;
+  }
+  
+    /* 1) Sobre */
+  #sobre {
+    height: max-content;
+    width: auto;
+  }
+
+  .sobre-mobile {
+    width: 80vw;
+    height: max-content;
+    margin: 3vh auto;
+  }
+
+  .sobre { display: none }
+  .sobre-mobile { display: block; }
+  
+    /* 2) Serviços */
+  #servicos { height: max-content; }
+
+  #servicos-itens {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .card-servicos {
+    margin: 4vh 6vw;
+    width: auto;
+    height: 50vh;
+    padding: 5vh 0 1vh 0;
+    border-radius: 44px;
+  }
+
+  .card-servicos p {
+    font-size: 1.14em;
+    font-weight: 300;
+    line-height: 3.6vh;
+    margin: 0 auto;
+    padding: 1.4vh 3.6vw;
+  }
+
+  .card-servicos h2 { font-size: 1.9em; }
+  
+    /* 3) Diferenciais */
+  #diferenciais {
+    height: auto;
+  }
+  
+  #diferenciais-itens {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .card-diferenciais {
+    margin: 4vh 6vw;
+    width: auto;
+    height: 58vh;
+    padding: 5vh 0 1vh 0;
+    border-radius: 70px;
+  }
+  
+  .card-diferenciais p {
+    margin: .8vh 6vw;
+    padding: 0 10vw;
+    font-size: 1.2;
+    font-weight: 600;
+    line-height: 5vw;
+  }
+
+  .card-servicos h1, { font-size: 1em; margin: .8vh auto; }
+  .card-servicos:nth-of-type(1) { background-image: url("images/mobile/s3\ ft1.png"); }
+  .card-servicos:nth-of-type(2) { background-image: url("images/mobile/s3\ ft2.png"); }
+  .card-servicos:nth-of-type(3) { background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("images/mobile/s3\ ft3.png"); }  
+  .card-diferenciais:nth-of-type(1) { background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("images/mobile/s4\ ft1.png"); }
+  .card-diferenciais:nth-of-type(2) { background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("images/mobile/s4\ ft2.png"); }
+  .card-diferenciais:nth-of-type(3) { background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("images/mobile/s4\ ft3.png"); }
+  
+  /* Rodapé */
+  footer {
+    background-color: #ff0;
+    height: auto;
+    padding: 1.6vh 0;
+    width: 100vw;
+  }
+  
+  #footer-content {
+    display: block;
+    height: auto;
+    padding: 0;
+  }
+  
+    /* 1) Info Rocky */
+  #footer-data { padding: 1.7vh 6vw 2.2vh 0; }
+  #footer-data-text { display: none }
+  #footer-data-text-mobile { display: block; }
+  #footer-data, #footer-form {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+  
+    /* 2) Formulário p/ contato */
+  #footer-form { width: auto; margin: 0; padding: 0 }
+  #footer-form form { padding: 0 4vw; }
+  
+  #footer-form button {
+    padding: 30px 0;
+    font-size: 1.4em;
+  }
+}

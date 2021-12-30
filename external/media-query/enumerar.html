@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enumerando elementos automaticamente</title>
+  <style>
+    :root { counter-reset: headings; }
+    h3 { counter-increment: headings; }
+    h3::before { content: counter(headings); }
+  </style>
+</head>
+<body>
+  <h3>.Título</h3>
+  <h3>.Começo</h3>
+  <h3>.Meio</h3>
+  <h3>.Fim</h3>
+  <h3>.Bibliografia</h3>
+</body>
+</html>

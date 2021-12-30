@@ -1,0 +1,51 @@
+<h1>Projeto</h1>
+
+<ul class="tree">
+    <li>
+        <span cFolder>Backend</span>
+        <ul>
+            <li>
+                <span cFolder>App</span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span cFolder>config</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span cFolder>Frontend</span>
+        <ul>
+            <li>
+                <span cFolder>public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="../tree.css">
+
+<script>
+    document.querySelectorAll("[cFolder]").forEach(dossier => {
+        dossier.onclick = function(event) {
+            const ul = dossier.nextElementSibling
+            const d = ul.style.display
+            ul.style.display = d === "none" ? "block" : "none"
+        }
+    })
+    
+</script>

@@ -1,0 +1,17 @@
+fetch("https://api.github.com/users/peas/followers")
+.then(function (response) {
+    if (response.ok) {
+        return response.json()
+    }
+    throw new Error("Aconteceu algum problema :" + response.status)
+})
+.then(function(convertedResponde) {
+    console.log(convertedResponde)
+})
+.catch(function (erro) {
+    console.error(erro)
+})
+
+retrieve external json file
+
+SPA - Single Page App

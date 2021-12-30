@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+    <style>
+        #conteudo {
+            padding: 20px 0px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercícios HTML</h1>
+    </header>
+    <nav>
+        <a href link-especial="exer/teste.html">Teste</a>&nbsp;&nbsp;|
+        <a href link-especial="exer/texto1.html">1) Texto I</a>&nbsp;&nbsp;|
+        <a href link-especial="exer/texto2.html">2) Texto II</a>&nbsp;&nbsp;|
+        <a href link-especial="exer/listas.html">3) Listas</a>&nbsp;&nbsp;|
+        <a href link-especial="exer/lista-aninhada.html">4) Lista aninhada</a>&nbsp;&nbsp;|
+        <a href link-especial="exer/links.html">5) Links</a>&nbsp;&nbsp;|
+        <a href link-especial="exer/tabelas.html">6) Tabelas</a>&nbsp;&nbsp;|
+        <a href link-especial="exer/form/form.html">7) Formulários</a>&nbsp;&nbsp;|
+        <a href link-especial="exer/imagens.html">8) Imagens</a>&nbsp;&nbsp;|
+        <a href link-especial="exer/video.html">9) Video</a>&nbsp;&nbsp;|
+        <a href link-especial="exer/tagsNaoVisuais.html">10) Tags Não Visuais</a>
+    </nav>
+    <section id="conteudo"></section>
+    <footer>
+        Relembrando HTML
+    </footer>
+    <script>
+        // document.querySelectorAll("a").forEach(link => {
+        // 1) forma padrão, usando o conteúdo de a href
+        document.querySelectorAll("[link-especial]").forEach(link => {
+            const cont = document.getElementById("conteudo")
+            link.onclick = ((event) => {
+                event.preventDefault()
+                // fetch(link.href) // forma padrão
+                // 2) forma padrão, usando o conteúdo de a href
+                fetch(link.getAttribute("link-especial"))
+                .then(async response => cont.innerHTML = await response.text())
+            })
+        })
+    </script>
+</body>
+</html>

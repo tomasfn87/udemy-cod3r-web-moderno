@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+
+
+/* Automatização de variáveis, para quando um valor compartilhado sem 
+esforços */
+
+:root {
+    --top-menu-text-color: rgb(22, 27, 26);
+    --background-color: rgb(245, 187, 164);
+    --r: 0;
+    --g: 12;
+    --b: 6;
+    --text-color: rgb(var(--r), var(--g), var(--b));
+    --card-title-color: rgb(14, 66, 53);
+    --card-img-border-color: #fff;
+    --card-border-color: #ffe3bf;
+    --sidemenu-background-color: lightsalmon;
+    --footer-background-color: rgb(207, 67, 11);
+    --footer-text-color: #fff;
+    --menu-content-height: 1000px;
+}
+
+header {
+    color: var(--top-menu-text-color);
+    width: clamp(min-content, 660px, 100vw);
+}
+
+header h2 {
+    font-size: 1.433em;
+}
+
+#header-left,
+#header-center,
+#header-right {
+    height: 150px;
+}
+
+#enumeracao-auto {
+    background-color: var(--sidemenu-background-color);
+    display: inline-flex;
+}
+
+
+/* Estudar CSS Flexbox e CSS Grid */
+
+.grid {
+    display: grid;
+    grid-template-columns: 80px 500px 80px;
+    grid-template-rows: 9.375em fit-content;
+    place-items: center;
+}
+
+
+/* Clamp - valor mínimo, preferido e máximo */
+
+.card {
+    width: clamp(200px, 49vw, max-content);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    height: var(--menu-content-height);
+}
+
+.card p {
+    margin: .6em 1em;
+}
+
+.card h3 {
+    color: var(--card-title-color);
+    text-align: center;
+}
+
+.card img {
+    border: solid calc(1vw + 2px) var(--card-img-border-color);
+}
+
+.card img:first-of-type {
+    float: left;
+    margin: 1em 1em .13em 1em;
+}
+
+.card img:last-of-type {
+    float: right;
+    margin: .13em 1em 1em 1em;
+}
+
+.menu,
+.links {
+    background-color: var(--sidemenu-background-color);
+    width: 80px;
+    height: var(--menu-content-height);
+    text-align: center;
+}
+
+footer {
+    height: 4em;
+    width: 660px;
+    background-color: var(--footer-background-color);
+    text-align: center;
+    color: var(--footer-text-color);
+}
+
+
+/* Aspect-ratio - not fully supported YET */
+
+
+/* Jeito tradicional de fazer um vídeo manter o aspecto 16:9 */
+
+.container-16x9 {
+    position: relative;
+    padding-top: 56.25%;
+}
+
+video {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+
+/* Com aspect-ratio */
+
+video {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+
+/* CSS Animation */
+/* CSS Calc */
+
+/*  style="--order: 1" */
+/*  style="--order: 2" */
+/*  style="--order: 3" */
+
+.drop {
+    animation: dropIn 1s ease forwards;
+    animation-delay: calc(var(--order) * 100ms);
+}
+
+@keyframes dropIn {
+    from {
+        transform: translateY(-700px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.drop {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+/* Como enumerar automaticamente elementos */
+
+:root {
+    counter-reset: headings;
+}
+
+h2 {
+    counter-increment: headings;
+}
+
+h2::before {
+    content: counter(headings);
+}

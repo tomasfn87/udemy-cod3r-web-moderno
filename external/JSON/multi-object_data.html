@@ -8,59 +8,81 @@
                 class:"mammal",
                 species:"dog",
                 gender:"male",
-                birth:2006
+                birth:2006,
+                fur:0,
+                eyes:0
             }
 
             let animal_2 = {
+                name:"Balu",
+                class:"mammal",
+                species:"dog",
+                gender:"female",
+                birth:2016,
+                fur:1,
+                eyes:0
+            }
+
+            let animal_3 = {
                 name:"Bisteca",
                 class:"mammal",
                 species:"dog",
                 gender:"female",
-                birth:2014
+                birth:2014,
+                fur:0,
+                eyes:0
             }
 
-            let animal_3 = {
+            let animal_4 = {
                 name:"Churrasco",
                 class:"mammal",
                 species:"dog",
                 gender:"male",
-                birth:2015
+                birth:2015,
+                fur:0,
+                eyes:0
             }
 
-            let animal_4 = { 
+            let animal_5 = { 
                 name:"Zyg",
                 class:"mammal",
                 species:"cat",
                 gender:"female",
-                birth:2020
+                birth:2020,
+                fur:4,
+                eyes:1
             }
 
             let pets = {
                 pet1:animal_1,
                 pet2:animal_2,
                 pet3:animal_3,
-                pet4:animal_4
+                pet4:animal_4,
+                pet5:animal_5
             }
 
             let petFur = [
-                "light",
+                "light", // 0
                 "dark",
                 "spotted",
                 "striped",
-                "three-coloured"
+                "three-coloured" // 4
             ]
 
             let petEyes = [
-                "brown",
+                "brown", // 0
                 "green",
-                "blue"
+                "blue",
+                "yellow",
+                "double coloured" // 4
             ]
 
             let petComplete = {
-                petOption_1: petFur,
-                petOption_2: petEyes
+                petOption1_fur: petFur,
+                petOption2_eyes: petEyes
             }
 
+            /*
             console.log(pets)
             console.log(pets.pet1.name, "is a", pets.pet1.species + ".")
             console.log(pets.pet2.name, "was born in", pets.pet2.birth + ".")
@@ -70,14 +92,86 @@
             console.log(pets)
             // Below you can see the quoted JSON synthax:
             console.log(petComplete)
-            console.log(pets["pet4"]["name"], "is a", pets["pet4"]["species"] + ".")
-            console.log(pets.pet4.name, "has", petComplete.petOption_2[1], "eyes.")
-            console.log(pets["pet1"]["name"], "is a", pets["pet1"]["species"] + ".")
-            console.log(pets.pet1.name, "has", petComplete.petOption_1[0], "fur.")
+            console.log(
+                pets["pet4"]["name"], "is a", pets["pet4"]["species"] + "."
+            )
+            console.log(
+                pets.pet4.name, "has", petComplete.petOption2_eyes[1], "eyes."
+            )
+            console.log(
+                pets["pet1"]["name"], "is a", pets["pet1"]["species"] + "."
+            )
+            console.log(
+                pets.pet1.name, "has", petComplete.petOption1_fur[0], "fur."
+            )
+
+            // Bidu
+            console.log(
+                  pets.pet1.name
+                + "'s fur color: "
+                + petComplete.petOption1_fur[pets.pet1.fur]
+            )
+            console.log(
+                  pets.pet1.name
+                + "'s eyes color: "
+                + petComplete.petOption2_eyes[pets.pet1.eyes]
+            )
+
+            // Balu
+            console.log(
+                  pets.pet5.name
+                + "'s fur color: "
+                + petComplete.petOption1_fur[pets.pet5.fur]
+            )
+            console.log(
+                  pets.pet5.name
+                + "'s eyes color: "
+                + petComplete.petOption2_eyes[pets.pet5.eyes]
+            )
+
+            // Zyg
+            console.log(
+                  pets.pet4.name
+                + "'s fur color: "
+                + petComplete.petOption1_fur[pets.pet4.fur]
+            )
+            console.log(
+                  pets.pet4.name
+                + "'s eyes color: "
+                + petComplete.petOption2_eyes[pets.pet4.eyes]
+            )
+            */ 
+            console.log("** JavaScript for...in loop practice **")
+            console.log("") 
+
+            // Imprimir info sobre todos os pets
+            for (eachPet in pets) {
+                console.log(
+                      pets[eachPet].name
+                    + " is a " 
+                    + pets[eachPet].species
+                    + "."
+                )
+                console.log(
+                      pets[eachPet].name
+                    + " was born in "
+                    + pets[eachPet].birth + "."
+                )
+                console.log(
+                    pets[eachPet].name
+                  + "'s fur color: "
+                  + petComplete.petOption1_fur[pets[eachPet].fur]
+                )
+                console.log(
+                    pets[eachPet].name
+                  + "'s eyes color: "
+                  + petComplete.petOption2_eyes[pets[eachPet].eyes]
+                )
+                console.log("")
+            }
         </script>
     </head>
 
     <body>
-        
     </body>
 </html>

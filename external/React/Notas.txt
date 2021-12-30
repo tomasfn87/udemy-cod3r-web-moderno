@@ -1,0 +1,2 @@
+npm install next react react-dom
+npx create-next-app --example with-styled-components

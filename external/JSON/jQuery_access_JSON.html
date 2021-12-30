@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <title>jQuery access JSON practice</title>
+    </head>
+    <body></body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+<script type="text/javascript">
+
+    async function petData() {
+        return (await fetch("./data/newData.json")).json()}
+
+        /* const response = await fetch("./data/newData.json");
+        const pets = await response.json();
+        return pets;
+    } */
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        let pets = []
+
+        try {
+            pets = await petData()
+        } catch (e) { // error handling
+            console.log(e)
+        }
+
+        for (p in pets) {
+            console.log(
+                  pets[p].name + " is a " + pets[p].species
+                + " born in " + pets[p].birth + "."
+            )
+        }
+
+    })
+
+</script>

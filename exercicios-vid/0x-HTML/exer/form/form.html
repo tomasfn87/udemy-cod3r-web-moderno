@@ -1,0 +1,61 @@
+<h1>Formulários</h1>
+<code>
+    npm init -y<br>
+    npm i --save express@4.16.3 body-parser@1.18.2 -E<br>
+    node server.js<br>
+    npm i --save-dev nodemon
+    yarn add nodemon
+</code>
+<p>-E => instalar essa versão especificamente</p>
+
+<!-- <form method="POST"> -->
+    <form>
+    <input type="hidden" name="id" value="3">
+    <input type="text" name="nome">
+    <input type="password" name="senha">
+    <textarea name="bio" cols="30" rows="10"></textarea>
+    <div>
+        <input type="radio" name="tipo" value="admin">Admin
+        <input type="radio" name="tipo" value="regular">Regular
+        <input type="radio" name="tipo" value="professor">Professor
+    </div>
+    <div>
+        <input type="checkbox" name="ativo">Ativo
+    </div>
+    <div>
+        <select name="estado">
+            <option value="">Selecione seu estado</option>
+            <option value="ac">Acre</option>
+            <option value="ba">Bahia</option>
+            <option value="rj">Rio de Janeiro</option>
+            <option value="pr">Paraná</option>
+        </select>
+    </div>
+    <div>
+        <select name="interesses" multiple size="4">
+            <option value="nodejs">NodeJs</option>
+            <option value="reactjs">ReactJs</option>
+            <option value="python">Python</option>
+            <option value="htmlcss">HTML/CSS</option>
+            <option value="java">Java</option>
+        </select>
+    </div>
+    <button formaction="http://localhost:3005/usuarios" formmethod="POST">Incluir</button>
+    <button formaction="http://localhost:3005/usuarios/3" formmethod="POST">Alterar</button>
+</form>
+
+<style>
+    input,
+    textarea,
+    select {
+        display: block;
+        margin-bottom: 10px;
+    }
+    input[type=radio],
+    input[type=checkbox] {
+        display: inline;
+    }
+    code {
+        font-size: 14px;
+    }
+</style>

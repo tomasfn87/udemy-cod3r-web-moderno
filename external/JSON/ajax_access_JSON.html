@@ -1,0 +1,27 @@
+<!doctype hmtl>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JSON Tutorial JavaScript</title>
+    </head>
+    <body></body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+<script type="text/javascript">
+$.ajax({
+    type: "GET",
+    url: './data/newData.json',
+    dataType: 'json',
+    success: function (data_json) {
+        for (i in data_json) {
+            console.log(
+                  data_json[i].name + " is a " + data_json[i].species
+                + " born in " + data_json[i].birth + "."
+            )
+        }
+    },
+    error: function () {
+    }
+});
+</script>

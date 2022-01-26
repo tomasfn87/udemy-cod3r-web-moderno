@@ -40,7 +40,7 @@ const ProfileRelationsBox = (props) => {
             </li>
           )
         })}
-     </ul>
+      </ul>
     </ProfileRelationsBoxWrapper>
   )
 }

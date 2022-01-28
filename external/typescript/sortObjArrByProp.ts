@@ -1,13 +1,14 @@
 function sortObjectArrByProp<Type>(
   objArr: Type[],
-  objProp: string,
+  objProp: string | number,
   reverse: 's' | 'r' = 's'
 ):Type[] {
+
   let sortedObjectArray:Type[] = [];
   let values:Type[] = [];
   let indices:number[] = [];
 
-  objArr.forEach((obj:any, index:number):void => {
+  objArr.forEach((obj:string | number | any, index:number):void => {
     typeof obj[objProp] !== 'string'
       || typeof obj[objProp] !== 'number'
       ? values.push(obj[objProp].toString())
@@ -31,38 +32,4 @@ function sortObjectArrByProp<Type>(
   return sortedObjectArray;
 }
 
-const objArr:{a:number, b:number}[] = [
-  { a: 7, b: 5 },
-  { a: 9, b: 2 },
-  { a: 1, b: 7 },
-  { a: 4, b: 1 },
-  { a: 6, b: 3 },
-  { a: 5, b: 4 },
-  { a: 2, b: 8 },
-  { a: 3, b: 6 },
-  { a: 8, b: 9 }
-]
-
-console.log(` * Object Array {}[] -> objArr = [
-  { a: 7, b: 5 },
-  { a: 9, b: 2 },
-  { a: 1, b: 7 },
-  { a: 4, b: 1 },
-  { a: 6, b: 3 },
-  { a: 5, b: 4 },
-  { a: 2, b: 8 },
-  { a: 3, b: 6 },
-  { a: 8, b: 9 }
-]`)
-
-console.log(` * STANDARD #1: sortObjectArrByProp(objArr, "a")
- * RESULT: `)
-console.log(sortObjectArrByProp(objArr, "a"));
-
-console.log(` * STANDARD #2: sortObjectArrByProp(objArr, "b")
- * RESULT: `)
-console.log(sortObjectArrByProp(objArr, "b"));
-
-console.log(` * REVERSED: sortObjectArrByProp(objArr, "a", "r")
- * RESULT: `)
-console.log(sortObjectArrByProp(objArr, "a", "r"));
+export default sortObjectArrByProp;

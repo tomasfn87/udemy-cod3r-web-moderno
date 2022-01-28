@@ -82,7 +82,7 @@ describe('Sort Object Array by Property', () => {
 
   it(`3) ../sortObjArrByProp.ts.sortObjectArrByProp(
     [                    ->    [
-      { a: 8, b: 9 }     ->      { a: 9, b: 2 },
+      { a: 8, b: 9 },    ->      { a: 9, b: 2 },
       { a: 3, b: 6 },    ->      { a: 8, b: 9 },
       { a: 2, b: 8 },    ->      { a: 7, b: 5 },
       { a: 5, b: 4 },    ->      { a: 6, b: 3 },
@@ -90,7 +90,7 @@ describe('Sort Object Array by Property', () => {
       { a: 4, b: 1 },    ->      { a: 4, b: 1 },
       { a: 1, b: 7 },    ->      { a: 3, b: 6 },
       { a: 9, b: 2 },    ->      { a: 2, b: 8 },
-      { a: 7, b: 5 },    ->      { a: 1, b: 7 }
+      { a: 7, b: 5 }     ->      { a: 1, b: 7 }
     ],                   ->    ]
   "a", "i")`, () => {
     let result = sortObjectArrByProp(objArr, "a", "r");

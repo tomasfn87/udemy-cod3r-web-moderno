@@ -1,12 +1,17 @@
-
-
-function sortObjectArrByProp<Type>(objArr:Type[], objProp:string, reverse:string='s'):Type[] {
+function sortObjectArrByProp<Type>(
+  objArr: Type[],
+  objProp: string,
+  reverse: 's' | 'r' = 's'
+):Type[] {
   let sortedObjectArray:Type[] = [];
   let values:Type[] = [];
   let indices:number[] = [];
 
-  objArr.map((obj:{} | any, index:number):void => {
-    values.push(obj[objProp]);
+  objArr.forEach((obj:any, index:number):void => {
+    typeof obj[objProp] !== 'string'
+      || typeof obj[objProp] !== 'number'
+      ? values.push(obj[objProp].toString())
+      : values.push(obj[objProp])
     indices.push(index);
   });
 
@@ -26,28 +31,28 @@ function sortObjectArrByProp<Type>(objArr:Type[], objProp:string, reverse:string
   return sortedObjectArray;
 }
 
-const objArr:{a:string, b:string}[] = [
-  { a: "7", b: "5" },
-  { a: "9", b: "2" },
-  { a: "1", b: "7" },
-  { a: "4", b: "1" },
-  { a: "6", b: "3" },
-  { a: "5", b: "4" },
-  { a: "2", b: "8" },
-  { a: "3", b: "6" },
-  { a: "8", b: "9" }
+const objArr:{a:number, b:number}[] = [
+  { a: 7, b: 5 },
+  { a: 9, b: 2 },
+  { a: 1, b: 7 },
+  { a: 4, b: 1 },
+  { a: 6, b: 3 },
+  { a: 5, b: 4 },
+  { a: 2, b: 8 },
+  { a: 3, b: 6 },
+  { a: 8, b: 9 }
 ]
 
 console.log(` * Object Array {}[] -> objArr = [
-  { a: "7", b: "5" },
-  { a: "9", b: "2" },
-  { a: "1", b: "7" },
-  { a: "4", b: "1" },
-  { a: "6", b: "3" },
-  { a: "5", b: "4" },
-  { a: "2", b: "8" },
-  { a: "3", b: "6" },
-  { a: "8", b: "9" }
+  { a: 7, b: 5 },
+  { a: 9, b: 2 },
+  { a: 1, b: 7 },
+  { a: 4, b: 1 },
+  { a: 6, b: 3 },
+  { a: 5, b: 4 },
+  { a: 2, b: 8 },
+  { a: 3, b: 6 },
+  { a: 8, b: 9 }
 ]`)
 
 console.log(` * STANDARD #1: sortObjectArrByProp(objArr, "a")

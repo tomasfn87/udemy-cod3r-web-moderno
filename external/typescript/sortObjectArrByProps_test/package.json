@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@nighly/sort-object-array-by-property": "^1.2.0"
+    "@nighly/sort-object-array-by-property": "^1.2.1"
   }
 }

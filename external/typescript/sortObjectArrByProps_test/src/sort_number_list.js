@@ -60,4 +60,8 @@ const numberObjArr = [
   { a: 9 }
 ]
 
-console.log("objProps =", props, "|  reverse =", reverse, "->", sortObjectArrByProps(numberObjArr, props, reverse))
+if (reverse === "") {
+  console.log("objProps =", props, "->", sortObjectArrByProps(numberObjArr, props))
+} else {
+  console.log("objProps =", props, "|  reverse =", reverse, "->", sortObjectArrByProps(numberObjArr, props, reverse))
+}

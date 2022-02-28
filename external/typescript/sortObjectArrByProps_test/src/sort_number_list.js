@@ -5,14 +5,13 @@ let props = []
 if (input.length > 2) {
   props = input[2].split(",")
 } else {
-  props = ["a", "b", "c", "d"]
+  props = ""
 }
 if (input.length > 3) {
   reverse = input[3]
 } else {
   reverse = ""
 }
-
 
 const numberObjArr = [
   { a: 10, b: 12 },
@@ -60,8 +59,11 @@ const numberObjArr = [
   { a: 9 }
 ]
 
-if (reverse === "") {
-  console.log("objProps =", props, "->", sortObjectArrByProps(numberObjArr, props))
-} else {
-  console.log("objProps =", props, "|  reverse =", reverse, "->", sortObjectArrByProps(numberObjArr, props, reverse))
+if (Array.isArray(props) && props.length == 1) {
+  props = props[0]
 }
+
+if (props.length === 0) {
+  console.log(sortObjectArrByProps(numberObjArr, props))
+} else if (reverse === "") console.log("objProps =", props, "->", sortObjectArrByProps(numberObjArr, props))
+  else console.log("objProps =", props, "|  reverse =", reverse, "->", sortObjectArrByProps(numberObjArr, props, reverse))

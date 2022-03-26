@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    background-color: #000;
+}
+
+.lines {
+    stroke: #f00;
+    stroke-width: 3;
+}
+
+.lines path {
+    stroke: rgb(117, 207, 44);
+}

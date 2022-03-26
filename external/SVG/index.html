@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shapes with SVG</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <svg width="800" height="900">
+    <g transform="scale(1.3)">
+      <g stroke="#555" stroke-width="2">
+        <rect x="0" y="0" height="200" width="200" fill="#2ca"></rect>
+        <circle r="100" cx="300" cy="100" fill="#096"></circle>
+      </g>
+      <g transform="translate(0, 200)" stroke="#777" stroke-width="3">
+        <circle r="100" cx="100" cy="100" fill="#0bf"></circle>
+        <rect x="200" y="0" height="200" width="200" fill="#38f"></rect>
+      </g>
+      <g class="lines">
+        <line x1="25" y1="425" x2="300" y2="650"></line>
+        <line x1="300" y1="650" x2="350" y2="450"></line>
+        <line x1="350" y1="450" x2="375" y2="550"></line>
+        <line x1="375" y1="550" x2="405" y2="475"></line>
+        <path
+        d="M25 550 L75 495 L225 575 L275 475 L350 625 L375 525 L385 605 L391 585 L400 560"
+        fill="none"></path>
+      </g>
+    </g>
+  </svg>
+</body>
+</html>

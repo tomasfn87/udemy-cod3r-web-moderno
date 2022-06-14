@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de IMC</title>
+    <style>
+        body {
+            background-color: #141414;
+            color: rgb(160, 160, 160);
+            font-family: monospace;
+        }
+        input {
+            background-color: #000;
+            color: rgb(180, 180, 180);
+            border: solid 3px #212121;
+            font-family: sans-serif;
+        }
+        label {
+            font-size: 0.9em;
+        }
+        #imc-resultado {
+            font-size: 1.05em;
+            color:rgb(216, 183, 63);
+        }
+        #botao-calcular:hover {
+            color: rgb(216, 183, 63);
+            border-color: rgb(84, 72, 31);
+        }
+    </style>
+</head>
+<script src="imc.js"></script>
+<body onload="mostraIMC()">
+    <main>
+        <h2>Calcular IMC</h2>
+        <form name="formulario">
+            <label for="peso">Digite o peso (kg):</label><br>
+            <input type="text" name="peso"><br><br>
+            <label for="altura">Digite a altura (m):</label><br>
+            <input type="text" name="altura"><br>
+            <br>
+            <input id='botao-calcular' type="button" value="Calcular" onclick="mostraIMC()">
+            <p id="imc-paragrafo">
+                O seu IMC é <b><span id="imc-resultado"></span></b>.
+            </p>
+        </form>
+    </main>
+</body>
+</html>

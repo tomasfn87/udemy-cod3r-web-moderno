@@ -1,11 +1,11 @@
 const getCookiesAsObjArr = (url, cookie_str) => {
-    regex_url = /(https?:\/\/)(\S+[^\/]{1})(\/)?/
-    url = url.replace(regex_url, "$2")
+    regex_url = /(https?:\/\/)(www.)?(\S+[^\/])(\/)?/
+    url = url.replace(regex_url, "$3")
 
-    regex_full_cookie = /([^=]+)={1}(\S+);?\s?/g
+    regex_full_cookie = /([^=]+)=([^;\s]+);?\s?/g
     cookies = cookie_str.match(regex_full_cookie)
 
-    regex_key_value = /^([^=]+)={1}(\S+);?\s?$/
+    regex_key_value = /^([^=]+)=([^;\s]+)(;\s)?$/
     cookiesAsObjArr = { url: url, cookies: [] }
     cookies.forEach(i => {
         cookiesAsObjArr['cookies'].push({
@@ -18,7 +18,9 @@ const getCookiesAsObjArr = (url, cookie_str) => {
 }
 
 /* Load function getCookiesAsObjArr and then run the command above on the browser console:
+
 getCookiesAsObjArr(document.URL, document.cookie)
+
 */
 
 a = '_octo=GH1.1.1130998117.1626027327; tz=America%2FSao_Paulo'
@@ -29,6 +31,6 @@ e = 'wide=1; PREF=tz=America.Sao_Paulo&f6=40000000&f4=4000000; SID=KwgtLv0f_oGtC
 
 console.log(getCookiesAsObjArr('https://github.com/', a))
 console.log(getCookiesAsObjArr('https://coca-cola.com.br/', b))
-console.log(getCookiesAsObjArr('https://itau.com.br/', c))
+console.log(getCookiesAsObjArr('https://www.itau.com.br/', c))
 console.log(getCookiesAsObjArr('https://cookiepedia.co.uk/', d))
 console.log(getCookiesAsObjArr('https://www.youtube.com/', e))

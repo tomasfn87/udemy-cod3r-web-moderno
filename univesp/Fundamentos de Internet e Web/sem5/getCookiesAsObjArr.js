@@ -1,13 +1,12 @@
 const getCookiesAsObjArr = (url, cookie_str) => {
-    regex_url = /(https?:\/\/)(.+)\//
+    regex_url = /(https?:\/\/)(\S+[^\/]{1})(\/)?/
     url = url.replace(regex_url, "$2")
 
     regex_full_cookie = /([^=]+)={1}(\S+);?\s?/g
     cookies = cookie_str.match(regex_full_cookie)
 
-    regex_key_value = /^([^=]+)={1}(\S+)(;\s)?$/
+    regex_key_value = /^([^=]+)={1}(\S+);?\s?$/
     cookiesAsObjArr = { url: url, cookies: [] }
-
     cookies.forEach(i => {
         cookiesAsObjArr['cookies'].push({
             key: i.replace(regex_key_value, "$1"),

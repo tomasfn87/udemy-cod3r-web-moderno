@@ -26,12 +26,14 @@ section {
   min-width: 280px;
   width: 50vw;
   text-align: justify;
+  color: #787878;
+  padding: 0 .5em;
 }
 
 .post:after {
   content: "Leia mais";
   font-size: 0.85em;
-  color: #929292;
+  color: #777777;
 }
 
 .titulo {
@@ -48,12 +50,12 @@ a[href="https://github.com/tomasfn87"]:hover {
 }
 
 a[href="https://google.com"] {
-  color: rgb(52, 110, 192);
+  color: rgb(63, 104, 161);
   text-decoration: none;
 }
 
 a[href="https://google.com"]:hover {
-  color: rgba(35, 211, 255, 0.891);
+  color: rgba(139, 225, 254, 0.891);
 }
 
 body > span {
@@ -61,20 +63,22 @@ body > span {
   font-weight: 600;
 }
 
-#meio-ambiente h4, 
-#meio-ambiente span     { color:rgb(104, 78, 208); }
+#meio-ambiente          { background-color:rgb(24, 0, 109); }
+#previsao-do-tempo      { background-color:rgb(0, 24, 101); }
+#dicas-de-cinema        { background-color:rgb(0, 53, 41); }
+#astrologia             { background-color:rgb(44, 46, 0); }
+#viagem                 { background-color:rgb(64, 34, 0); }
+#saude-e-bem-estar      { background-color:rgb(53, 8, 2); }
 
+#meio-ambiente h4,  
+#meio-ambiente span     { color:rgb(136, 112, 235); }
 #previsao-do-tempo h4,
-#previsao-do-tempo span { color:rgb(56, 88, 193); }
-
+#previsao-do-tempo span { color:rgb(82, 159, 231); }
 #dicas-de-cinema h4,
-#dicas-de-cinema span   { color:rgb(22, 143, 116); }
-
+#dicas-de-cinema span   { color:rgb(22, 155, 126); }
 #astrologia h4,
-#astrologia span        { color:rgb(168, 175, 22); }
-
+#astrologia span        { color:rgb(147, 154, 15); }
 #viagem h4,
-#viagem span            { color:rgb(181, 109, 27); }
-
+#viagem span            { color:rgb(163, 89, 3); }
 #saude-e-bem-estar h4,
 #saude-e-bem-estar span { color:rgb(169, 48, 32); }

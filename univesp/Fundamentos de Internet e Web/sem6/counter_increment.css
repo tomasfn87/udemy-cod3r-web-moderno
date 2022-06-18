@@ -22,7 +22,7 @@ p {
 }
 
 section {
-  border: 1px rgb(53, 53, 53) solid;
+  border: 1px rgb(51, 51, 51) solid;
   min-width: 280px;
   width: 50vw;
   text-align: justify;
@@ -60,3 +60,21 @@ body > span {
   font-size: 0.97em;
   font-weight: 600;
 }
+
+#meio-ambiente h4, 
+#meio-ambiente span     { color:rgb(104, 78, 208); }
+
+#previsao-do-tempo h4,
+#previsao-do-tempo span { color:rgb(56, 88, 193); }
+
+#dicas-de-cinema h4,
+#dicas-de-cinema span   { color:rgb(22, 143, 116); }
+
+#astrologia h4,
+#astrologia span        { color:rgb(168, 175, 22); }
+
+#viagem h4,
+#viagem span            { color:rgb(181, 109, 27); }
+
+#saude-e-bem-estar h4,
+#saude-e-bem-estar span { color:rgb(169, 48, 32); }

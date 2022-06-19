@@ -26,12 +26,11 @@ p {
 
 section {
   border: 2px rgba(0, 0, 0, 0) solid;
-  width: clamp(300px, 50vw, 700px);
+  height: clamp(140px, min-content, fit-content);
+  width: clamp(300px, 70vw, 1000px);
   text-align: justify;
   color: #787878;
-  padding: .5em .5em;
-  min-height: 90px;
-  height: clamp(120px, fit-content, 220px);
+  padding: 0 0 .8em .8em;
 }
 
 section:hover {
@@ -115,11 +114,12 @@ section:hover#saude-e-bem-estar h4,
 section:hover#saude-e-bem-estar .titulo { color:rgb(214, 123, 111); }
 
 img.secoes {
-  width: 88px;
-  height: 88px;
+  width: 90px;
+  height: 90px;
   float: left;
+  position: relative;
   opacity: 30%;
-  margin-right: 15px;
+  margin-right: 10px;
   border: 3px solid rgba(0, 0, 0, 0);
 }
 
@@ -131,7 +131,7 @@ section:hover img.secoes {
 
 footer {
   min-width: 280px;
-  width: clamp(300px, 50vw, 700px);    /* clamp define valores mínimo, alvo e máximo de uma só vez */
+  width: clamp(300px, 70vw, 1000px);    /* clamp define valores mínimo, alvo e máximo de uma só vez */
   /*     clamp( min, target,  max)  - evita o uso de min-width, width e max-width */ 
   padding-top: .3em;
 }
@@ -146,5 +146,10 @@ footer span {   /* github.com */
 }
 
 #github-logo:hover {
-  opacity: 65%;
+  opacity: 55%;
+}
+
+.onclick-content {
+  display: none;
+  width: 94%;
 }

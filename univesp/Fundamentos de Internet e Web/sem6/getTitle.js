@@ -7,9 +7,30 @@ const getTitle = (element_class, tag) => {
   }
 }
 
-const getChildNodeByTagName = (child_nodes, tag) => {
+const getChildNodeByTagName = (child_nodes, element_tag) => {
   for (i in child_nodes) {
-    if (child_nodes[i].localName == tag) {
+    if (child_nodes[i].localName == element_tag) {
+      return i
+    }
+  }
+}
+
+(function toggleOnclickContent() {
+    document.addEventListener('click', ((e) => {
+      element_list = e.path
+      child_nodes = element_list[getChildNodeByTagName(element_list, 'section')].childNodes
+      onclick_content = child_nodes[getChildNodeByClassName(child_nodes, 'onclick-content')]
+      if (onclick_content.style.display == '' || onclick_content.style.display == 'none') {
+        onclick_content.style.display = 'block'
+      } else {
+        onclick_content.style.display = 'none'
+      }
+    }))
+})()
+
+const getChildNodeByClassName = (child_nodes, element_class) => {
+  for (i in child_nodes) {
+    if (child_nodes[i].className == element_class) {
       return i
     }
   }

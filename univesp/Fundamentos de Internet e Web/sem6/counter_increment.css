@@ -148,3 +148,12 @@ footer {
 footer span {   /* github.com */
   float: right;
 }
+
+#github-logo {
+  fill: #949494;
+  opacity: 35%;
+}
+
+#github-logo:hover {
+  opacity: 65%;
+}

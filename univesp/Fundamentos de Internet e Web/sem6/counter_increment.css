@@ -43,7 +43,7 @@ section:hover {
 }
 
 .post:after {
-  content: "Clique para ler mais";                       /* Adiciona 'content' após o conteúdo da tag, */
+  content: "Clique para ler mais";            /* Adiciona 'content' após o conteúdo da tag, */
   font-size: 0.75em;                          /* seguindo as configurações */
   color: #505050;
 }
@@ -59,15 +59,6 @@ a[href="https://github.com/tomasfn87"] {
 
 a[href="https://github.com/tomasfn87"]:hover {
   color: #F00;
-}
-
-a[href="https://google.com"] {
-  color: rgb(63, 104, 161);
-  text-decoration: none;
-}
-
-a[href="https://google.com"]:hover {
-  color: rgb(139, 225, 254);
 }
 
 body > span {
@@ -140,7 +131,7 @@ section:hover img.secoes {
 
 footer {
   min-width: 280px;
-  width: clamp(300px, 50vw, 700px); /* clamp define valores mínimo, alvo e máximo de uma só vez */
+  width: clamp(300px, 50vw, 700px);    /* clamp define valores mínimo, alvo e máximo de uma só vez */
   /*     clamp( min, target,  max)  - evita o uso de min-width, width e max-width */ 
   padding-top: .3em;
 }

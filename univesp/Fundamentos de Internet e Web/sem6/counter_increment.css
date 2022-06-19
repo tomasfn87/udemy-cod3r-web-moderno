@@ -1,7 +1,6 @@
 html {
   margin: 0;
   padding: 0;
-  font-size: 0.96em;
 }
 
 body {                                        /* para numerar automaticamente */
@@ -11,30 +10,42 @@ body {                                        /* para numerar automaticamente */
   font-family: sans-serif;
 }
 
+h4 {
+  font-size: .87em;
+}
+
 h4:before {
   content: "Seção " counter(titulo) "\) ";    /* 2 - indicar o local de uso do contador */
   counter-increment: titulo;                  /* 3 - incrementar o contador */
 }
 
 p {
-  font-size: 0.92em;
+  font-size: 0.85em;
   padding-left: 2.5vw;
 }
 
 section {
-  border: 1px rgb(51, 51, 51) solid;
-  min-width: 280px;
-  width: 50vw;
+  border: 2px rgba(0, 0, 0, 0) solid;
+  width: clamp(300px, 50vw, 700px);
   text-align: justify;
   color: #787878;
   padding: .5em .5em;
-  height: 90px;
+  min-height: 90px;
+  height: clamp(120px, fit-content, 220px);
+}
+
+section:hover {
+  border: 2px rgba(223, 223, 223, 0.2) solid;
+}
+
+.post:before {
+  content: "Leia textos, veja fotos e assista a vídeos sobre";
 }
 
 .post:after {
-  content: "Leia mais";
-  font-size: 0.75em;
-  color: #777777;
+  content: "Clique para ler mais";                       /* Adiciona 'content' após o conteúdo da tag, */
+  font-size: 0.75em;                          /* seguindo as configurações */
+  color: #505050;
 }
 
 .titulo {
@@ -56,7 +67,7 @@ a[href="https://google.com"] {
 }
 
 a[href="https://google.com"]:hover {
-  color: rgba(139, 225, 254, 0.891);
+  color: rgb(139, 225, 254);
 }
 
 body > span {
@@ -64,36 +75,64 @@ body > span {
   font-weight: 600;
 }
 
-#meio-ambiente          { background-color:rgb(24, 0, 109); }
-#previsao-do-tempo      { background-color:rgb(0, 24, 101); }
-#dicas-de-cinema        { background-color:rgb(0, 53, 41); }
-#astrologia             { background-color:rgb(44, 46, 0); }
-#viagem                 { background-color:rgb(64, 34, 0); }
-#saude-e-bem-estar      { background-color:rgb(53, 8, 2); }
+#meio-ambiente           { background-color:rgb(24, 0, 109); }
+#meio-ambiente:hover     { background-color:rgb(13, 2, 55); }
+
+#previsao-do-tempo       { background-color:rgb(0, 24, 101); }
+#previsao-do-tempo:hover { background-color:rgb(0, 10, 43); }
+
+#dicas-de-cinema         { background-color:rgb(0, 53, 41); }
+#dicas-de-cinema:hover   { background-color:rgb(1, 19, 15); }
+
+#astrologia              { background-color:rgb(44, 46, 0); }
+#astrologia:hover        { background-color:rgb(25, 27, 0); }
+
+#viagem                  { background-color:rgb(64, 34, 0); }
+#viagem:hover            { background-color:rgb(34, 19, 1); }
+
+#saude-e-bem-estar       { background-color:rgb(53, 8, 2); }
+#saude-e-bem-estar:hover { background-color:rgb(19, 3, 0); }
 
 #meio-ambiente h4,  
-#meio-ambiente span     { color:rgb(136, 112, 235); }
+#meio-ambiente span                     { color:rgb(136, 112, 235); }
+section:hover#meio-ambiente h4,
+section:hover#meio-ambiente .titulo     { color:rgb(176, 159, 242); }
+
 #previsao-do-tempo h4,
-#previsao-do-tempo span { color:rgb(82, 159, 231); }
+#previsao-do-tempo span                 { color:rgb(82, 159, 231); }
+section:hover#previsao-do-tempo h4, 
+section:hover#previsao-do-tempo .titulo { color:rgb(146, 197, 245); }
+
 #dicas-de-cinema h4,
-#dicas-de-cinema span   { color:rgb(22, 155, 126); }
+#dicas-de-cinema span                   { color:rgb(22, 155, 126); }
+section:hover#dicas-de-cinema h4,
+section:hover#dicas-de-cinema .titulo   { color:rgb(61, 205, 173); }
+
 #astrologia h4,
-#astrologia span        { color:rgb(147, 154, 15); }
+#astrologia span                        { color:rgb(147, 154, 15); }
+section:hover#astrologia h4,
+section:hover#astrologia .titulo        { color:rgb(219, 227, 60); }
+
 #viagem h4,
-#viagem span            { color:rgb(163, 89, 3); }
+#viagem span                            { color:rgb(163, 89, 3); }
+section:hover#viagem h4,
+section:hover#viagem .titulo            { color:rgb(230, 147, 52); }
+
 #saude-e-bem-estar h4,
-#saude-e-bem-estar span { color:rgb(169, 48, 32); }
+#saude-e-bem-estar span                 { color:rgb(169, 48, 32); }
+section:hover#saude-e-bem-estar h4,
+section:hover#saude-e-bem-estar .titulo { color:rgb(214, 123, 111); }
 
 img.secoes {
-  width: 80px;
-  height: 80px;
+  width: 88px;
+  height: 88px;
   float: left;
   opacity: 30%;
   margin-right: 15px;
-  border: 3px solid rgba(139, 225, 254, 0);
+  border: 3px solid rgba(0, 0, 0, 0);
 }
 
-img.secoes:hover {
+section:hover img.secoes {
   opacity: 65%;
   border: 3px solid;
   border-color: inherit;
@@ -101,10 +140,11 @@ img.secoes:hover {
 
 footer {
   min-width: 280px;
-  width: 50vw;
+  width: clamp(300px, 50vw, 700px); /* clamp define valores mínimo, alvo e máximo de uma só vez */
+  /*     clamp( min, target,  max)  - evita o uso de min-width, width e max-width */ 
   padding-top: .3em;
 }
 
-footer span {
+footer span {   /* github.com */
   float: right;
 }

@@ -51,15 +51,6 @@ section:hover {
   font-style: italic;
 }
 
-a[href="https://github.com/tomasfn87"] {
-  color: rgb(162, 10, 10);
-  text-decoration: none;
-}
-
-a[href="https://github.com/tomasfn87"]:hover {
-  color: #F00;
-}
-
 body > span {
   font-size: 0.97em;
   font-weight: 600;

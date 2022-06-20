@@ -43,8 +43,8 @@ section:hover {
 
 .post:after {
   content: "Clique para ler mais";            /* Adiciona 'content' após o conteúdo da tag, */
-  font-size: 0.75em;                          /* seguindo as configurações */
-  color: #505050;
+  font-size: 0.85em;                          /* seguindo as configurações */
+  color: #666666;
 }
 
 .titulo {
@@ -150,6 +150,6 @@ footer span {   /* github.com */
 }
 
 .onclick-content {
-  display: none;
   width: 94%;
+  display: none;
 }

@@ -4,3 +4,4 @@ exercicios-vid/0x-HTML/exer/form/node_modules/
 external/typescript/node_modules/
 external/typescript/sortObjectArrByProps_test/node_modules/
 *.vscode*
+*node_modules

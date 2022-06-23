@@ -1,6 +1,6 @@
-var fs = require('fs');
+import fs from 'fs'
 
-function remove_quote_near_double_curly_brackets(input_file, output_file) {
+const remove_quote_near_double_curly_brackets = (input_file, output_file) => {
   fs.readFile(input_file, 'utf-8', function(err, data) {
     err && console.error(err)
     if (!data) {
@@ -22,7 +22,7 @@ function remove_quote_near_double_curly_brackets(input_file, output_file) {
   })
 }
 
-function check_file_extension(file, ext) {
+const check_file_extension = (file, ext) => {
   ext = ext.replace(/\./, '')
   fSplit = file.split('.')
   fileExt = fSplit[fSplit.length-1]
@@ -32,9 +32,9 @@ function check_file_extension(file, ext) {
   return false
 }
 
-inputs = process.argv
+let inputs = process.argv
 if (inputs.length < 4) {
-  console.error('ERRO: são necessários 2 parâmetros:\n   - Caminho do arquivo de origem           \(a ser limpo\)\n   - Caminho para salvar o arquivo limpo    \(o resultado\) \n\nSerá checado se o arquivo de destino é diferente do arquivo de origem:\n   - Se for salvar na mesma pasta, deverá usar um nome diferente')
+  console.error('ERRO: são necessários 2 parâmetros:\n   1. Caminho do arquivo de origem           \(a ser limpo\)\n   2. Caminho para salvar o arquivo limpo    \(o resultado\) \n\nSerá checado se o arquivo de destino é diferente do arquivo de origem:\n   - Se for salvar na mesma pasta, deverá usar um nome diferente')
 } else {
   in_file = inputs[2]
   out_file = inputs[3]

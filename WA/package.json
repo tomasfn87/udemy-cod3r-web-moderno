@@ -5,8 +5,16 @@
   "main": "remove_quote_near_double_curly_brackets.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/*.test.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  },
+  "dependencies": {
+    "@types/chai": "^4.3.1",
+    "@types/mocha": "^9.1.1",
+    "chai": "^4.3.6"
+  }
 }

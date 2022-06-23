@@ -1,0 +1,12 @@
+{
+  "name": "wa-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "remove_quote_near_double_curly_brackets.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

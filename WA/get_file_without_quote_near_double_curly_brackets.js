@@ -14,7 +14,7 @@ const get_file_without_quote_near_double_curly_brackets = (input_file, output_fi
     const filtered_data = remove_quote_near_double_curly_brackets(data, true)
     console.log('\n - Depois da limpeza:\n' + filtered_data)
     fs.writeFile(output_file, filtered_data, (err) => {
-      err && console.err(err)
+      err && console.error(err)
       return
     })
   })

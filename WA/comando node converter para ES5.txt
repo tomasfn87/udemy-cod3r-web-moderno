@@ -15,6 +15,7 @@ tsc --allowJs -t es5 ".\20220621-ecoisademenino_posts_acao somente links.js" --o
 - Explicação Comando (Node Prompt - DOS/cmd.exe):
 tsc                                                                                          --> TypeScript compiler - checar se está instalado: tsc -v, instalar: npm i --location=global tsc
   --allowJs                                                                                  --> permite o uso de arquivos .js (normalmente apenas .ts)
+  --lib es2021                                                                               --> biblioteca na qual o arquivo .js de origem foi escrito (ou superior)
   -t es5                                                                                     --> versao do ECMA Script do arquivo de saída
   ".\20220621-ecoisademenino_posts_acao somente links.js"                                    --> arquivo de origem
   --outDir .\es5                                                                             --> pasta de saída, para não substituir o arquivo original

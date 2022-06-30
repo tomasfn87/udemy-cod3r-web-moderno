@@ -17,7 +17,11 @@ const convert_es6_javascript_to_gtmscript = (input_file, output_file) => {
     console.log('\n - Depois da limpeza:\n' + filtered_data)
     fs.writeFile(output_file, filtered_data, (err) => {
       err && console.error(err)
-      console.log(`Função convertida para GTM Script com sucesso (salvo em: ${output_file})`)
+      if (data != filtered_data) {
+        console.log(`Função convertida para GTM Script com sucesso (salvo em: ${output_file})`)
+      } else {
+        console.log(`Função já se encontra no padrão do GTM Script (salvo em: ${output_file})`)
+      }
       return
     })
   })

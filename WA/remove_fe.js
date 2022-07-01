@@ -1,5 +1,5 @@
 const remove_function_expression = (string, loud=false) => {
-    const regexFE = /^\s*\((\s*function\s*\(\s*\)\s*\{.*\}\s*)\)\s*/sg
+    const regexFE = /^\s*\((\s*function\s*\(\s*\)\s*\{.*\}\s*)\);?\s*/sg
     const regexIIFE = /^\s*\((\s*function\s*\(\s*\)\s*\{.*\}\s*)\)\s*(\(\s*\))\s*?\s*/sg
     if (regexIIFE.test(string)) {
         return string
